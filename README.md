@@ -1,6 +1,6 @@
 # Autenticação Segura com Spring Security e JWT
 
- Este projeto demonstra a implementação de um sistema de autenticação seguro utilizando Spring Security e JWT em Java 17. O projeto segue os princípios SOLID e arquitetura limpa para garantir código modular, manutenível e escalável.  
+ Este projeto demonstra a implementação de um sistema de autenticação utilizando Spring Security e JWT em Java 17. O projeto segue os princípios SOLID e arquitetura limpa para garantir código modular, manutenível e escalável.  
 
 
 
