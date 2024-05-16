@@ -15,18 +15,22 @@ import com.loginspring.core.domain.user.User;
 @Service
 public class TokenService {
 
-    @Value("${api.security.token.secret}")
-    private String secret;
+    @Value("${auth.jwt.token.secret}")
+    private String secretKey;
+    @Value("${auth.jwt.token.expiration}")
+    private int tokenExpiration;
+    @Value("${auth.jwt.refersh-token.expiration}")
+    private int refreshTokenExpiration;
 
-    public String generateToken(User user) {
+    public String generateToken(User user, int expiration) {
 
         try {
-            Algorithm algorithm = Algorithm.HMAC256(secret);
+            Algorithm algorithm = Algorithm.HMAC256(secretKey);
 
             String token = JWT.create()
                     .withIssuer("zapio")
                     .withSubject(user.getEmail())
-                    .withExpiresAt(genExpirationDate())
+                    .withExpiresAt(genExpirationDate(expiration))
                     .sign(algorithm);
             return token;
         } catch (JWTCreationException exception) {
@@ -36,9 +40,9 @@ public class TokenService {
 
     public String validateToken(String token) {
         try {
-            Algorithm algorithm = Algorithm.HMAC256(secret);
+            Algorithm algorithm = Algorithm.HMAC256(secretKey);
             return JWT.require(algorithm)
-                    .withIssuer("zapio")
+                    .withIssuer("auth-api")
                     .build()
                     .verify(token)
                     .getSubject();
@@ -47,7 +51,7 @@ public class TokenService {
         }
     }
 
-    private Instant genExpirationDate() {
-        return LocalDateTime.now().plusHours(1).toInstant(ZoneOffset.of("-03:00"));
+    private Instant genExpirationDate(int expiration) {
+        return LocalDateTime.now().plusHours(expiration).toInstant(ZoneOffset.of("-03:00"));
     }
 }

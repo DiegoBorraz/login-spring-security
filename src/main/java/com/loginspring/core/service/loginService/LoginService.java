@@ -1,7 +1,10 @@
 package com.loginspring.core.service.loginService;
 
-import com.loginspring.core.recordClass.LoginRecord;
+import com.loginspring.core.dto.LoginDTO;
+import com.loginspring.core.dto.TokenResponseDTO;
 
 public interface LoginService {
-    String login(LoginRecord login);
+    TokenResponseDTO login(LoginDTO login);
+
+    TokenResponseDTO getRefreshToken(String refreshToken);
 }
