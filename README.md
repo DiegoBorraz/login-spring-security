@@ -6,13 +6,13 @@
 
  ## Tecnologias Utilizadas:
 ### 1. Ferramentas essenciais:
-- <img height="20" src="https://raw.githubusercontent.com/jmnote/z-icons/master/svg/java.svg"> **Java 17**.
-- <img height="20" src="https://img.icons8.com/?size=48&id=90519&format=png"> [Spring Boot](https://spring.io/projects/spring-boot).
-- <img height="20" src="https://img.icons8.com/?size=48&id=90519&format=png"> [Spring Security](https://spring.io/projects/spring-security).
-- <img height="20" src="https://img.icons8.com/?size=48&id=90519&format=png"> [Spring Data JPA](https://spring.io/projects/spring-data-jpa).
-- <img height="20" src="https://img.icons8.com/?size=48&id=90519&format=png"> **Flyway**.
-- <img height="20" src="https://jwt.io/img/pic_logo.svg"> **JSON Web Token (JWT)**.
-- <img height="20" src="https://avatars.githubusercontent.com/u/113517144?s=280&v=4"> **PostgreSQL**.
+- <img height="20" src="https://raw.githubusercontent.com/jmnote/z-icons/master/svg/java.svg">    [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- <img height="20" src="https://img.icons8.com/?size=48&id=90519&format=png">    [Spring Boot](https://spring.io/projects/spring-boot)
+- <img height="20" src="https://img.icons8.com/?size=48&id=90519&format=png">    [Spring Security](https://spring.io/projects/spring-security)
+- <img height="20" src="https://img.icons8.com/?size=48&id=90519&format=png">    [Spring Data JPA](https://spring.io/projects/spring-data-jpa)
+- <img height="20" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReUAQvS7o185SN7VX495l3HdBlMaW0uNyN2w&s">    [Flyway](https://flywaydb.org/)
+- <img height="20" src="https://jwt.io/img/pic_logo.svg">    [JSON Web Token (JWT)](https://jwt.io/)
+- <img height="20" src="https://avatars.githubusercontent.com/u/113517144?s=280&v=4">    [PostgreSQL](https://www.pgadmin.org/)
 
 ### 2. Principios e Arquiteturas:
 - **SOLID**.
