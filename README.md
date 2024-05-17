@@ -1,18 +1,18 @@
 # Autenticação Segura com Spring Security e JWT
 
- Este projeto demonstra a implementação de um sistema de autenticação utilizando Spring Security e JWT em Java 17. O projeto segue os princípios SOLID e arquitetura limpa para garantir código modular, manutenível e escalável.  
+ Foi criado um sistema de autenticação utilizando Spring Security e JWT em Java 17. O projeto segue os princípios SOLID e arquitetura limpa para garantir código modular, manutenível e escalável.  
 
 
 
  ## Tecnologias Utilizadas:
 ### 1. Ferramentas essenciais:
--  **Java 17**.
-- **Spring Boot**.
-- **Spring Security**.
-- **JSON Web Token (JWT)**.
-- **Spring Data JPA**.
-- **Flyway**.
-- **PostgreSQL**.
+- <img height="20" src="https://raw.githubusercontent.com/jmnote/z-icons/master/svg/java.svg"> **Java 17**.
+- <img height="20" src="https://img.icons8.com/?size=48&id=90519&format=png"> [Spring Boot](https://spring.io/projects/spring-boot).
+- <img height="20" src="https://img.icons8.com/?size=48&id=90519&format=png"> [Spring Security](https://spring.io/projects/spring-security).
+- <img height="20" src="https://img.icons8.com/?size=48&id=90519&format=png"> [Spring Data JPA](https://spring.io/projects/spring-data-jpa).
+- <img height="20" src="https://img.icons8.com/?size=48&id=90519&format=png"> **Flyway**.
+- <img height="20" src="https://jwt.io/img/pic_logo.svg"> **JSON Web Token (JWT)**.
+- <img height="20" src="https://avatars.githubusercontent.com/u/113517144?s=280&v=4"> **PostgreSQL**.
 
 ### 2. Principios e Arquiteturas:
 - **SOLID**.
