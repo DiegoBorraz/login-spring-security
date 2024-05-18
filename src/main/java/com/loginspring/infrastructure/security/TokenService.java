@@ -21,6 +21,8 @@ public class TokenService {
     private int tokenExpiration;
     @Value("${auth.jwt.refersh-token.expiration}")
     private int refreshTokenExpiration;
+    @Value("${auth.jwt.token.Issuer}")
+    private String Inssuer;
 
     public String generateToken(User user, int expiration) {
 
@@ -28,7 +30,7 @@ public class TokenService {
             Algorithm algorithm = Algorithm.HMAC256(secretKey);
 
             String token = JWT.create()
-                    .withIssuer("zapio")
+                    .withIssuer(Inssuer)
                     .withSubject(user.getEmail())
                     .withExpiresAt(genExpirationDate(expiration))
                     .sign(algorithm);
@@ -42,7 +44,7 @@ public class TokenService {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secretKey);
             return JWT.require(algorithm)
-                    .withIssuer("auth-api")
+                    .withIssuer(Inssuer)
                     .build()
                     .verify(token)
                     .getSubject();
