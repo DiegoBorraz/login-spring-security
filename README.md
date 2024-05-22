@@ -1,6 +1,6 @@
 # Autenticação Segura com Spring Security e JWT
 
- <p>Desenvolvi um sistema de autenticação utilizando Spring Security e JWT em Java 17. O projeto segue os princípios SOLID e arquitetura limpa para garantir código modular, de facil manutenção e escalável.</p>
+ <p>Desenvolvi um sistema de autenticação utilizando Spring Security e JWT em Java 17. O projeto segue os princípios SOLID e Clean Architecture para garantir código modular, de facil manutenção e escalável.</p>
  <p>O sistema utiliza Refresh token, ele renova o token do usuário sem precisar logar novamente, com segurança e praticidade.</p>
  <p>Também utilizando a ferramenta Flyway para geração automática das tabelas.</p>
  
