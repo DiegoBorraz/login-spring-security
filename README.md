@@ -1,9 +1,9 @@
 # Autenticação Segura com Spring Security e JWT
 
- Foi criado um sistema de autenticação utilizando Spring Security e JWT em Java 17. O projeto segue os princípios SOLID e arquitetura limpa para garantir código modular, manutenível e escalável.  
-
-
-
+ <p>Desenvolvi um sistema de autenticação utilizando Spring Security e JWT em Java 17. O projeto segue os princípios SOLID e Clean Architecture para garantir código modular, de facil manutenção e escalável.</p>
+ <p>O sistema utiliza Refresh token, ele renova o token do usuário sem precisar logar novamente, com segurança e praticidade.</p>
+ <p>Também utilizando a ferramenta Flyway para geração automática das tabelas.</p>
+ 
  ## Tecnologias Utilizadas:
 ### 1. Ferramentas essenciais:
 - <img height="20" src="https://raw.githubusercontent.com/jmnote/z-icons/master/svg/java.svg">    [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
@@ -18,25 +18,44 @@
 - **SOLID**.
 - **Clean Architecture**.
 
-### 3. Dependências:
-- **spring-boot-starter-web**.
-- **spring-boot-starter-data-jpa**.
-- **spring-boot-starter-security**.
-- **spring-boot-starter-validation**.
-- **spring-boot-starter-actuator**.
-- **flyway-core**.
-- **postgresql**.
-- **lombok**.
-- **java-jwt**.
+### 3. Criação do banco PostgreSQL
 
-### 4. Descrição das Funcionalidades:
-- **Fluxo de Login Robusto**:
-  - O usuário fornece suas credenciais (nome email e senha) em uma interface de login segura.
-  - O sistema valida as credenciais contra um banco de dados seguro, utilizando criptografia para proteger as informações.
-  - Em caso de login bem-sucedido, o sistema gera um token JWT assinado digitalmente e o retorna para o cliente.
-- **Validação e Controle de Tokens**:
-  - Cada token JWT contém informações sobre o usuário, como ID, nome e permissões de acesso.
-  - O token é enviado com cada requisição subsequente, permitindo que o sistema identifique e autorize o usuário sem a necessidade de redigitar suas credenciais.
-  - O sistema valida a assinatura e a integridade do token para garantir sua autenticidade e evitar ataques de falsificação.
-  - O token expira após um período definido, obrigando o usuário a fazer login novamente para garantir a segurança contínua.
-  - Usuários autenticados com token JWT válido podem consultar uma lista de usuários cadastrados no sistema através de uma requisição GET. A funcionalidade permite que usuários credenciados visualizem e gerenciem a base de usuários de forma eficiente. 
+* Utilize o PostgreSQL Shell ou PgAdmin para criar o banco de dados com o comando:
+    ```sql
+    CREATE DATABASE logindb;
+    ```
+### 4. Geração automatica das tabelas com Flyway
+
+<p>Adicione as seguintes propriedades no arquivo `application.properties` em <i>src/main/resources</i>:</p>
+
+```
+spring.application.name=spring-security
+spring.datasource.url=jdbc:postgresql://localhost:5432/logindb
+spring.datasource.username=postgres
+spring.datasource.password=postgres
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation= true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+auth.jwt.token.secret=${JWT_SECRET:my-secret-key}
+auth.jwt.token.Issuer=auth-api
+auth.jwt.token.expiration=1
+auth.jwt.refersh-token.expiration=8
+```
+
+
+### 5. Exemplos de Uso:
+- **Cadastro do usuário**:
+<div alingn="center">
+ <img src="https://github.com/DiegoBorraz/login-spring-security/assets/20254303/c1eb947b-d7f1-4a7f-89f9-a13b5f031342" />
+</div>
+
+- **Login usuário gerando o token e o refresh-token**:
+<div alingn="center">
+ <img src="https://github.com/DiegoBorraz/login-spring-security/assets/20254303/4cbe6f0f-10f9-4d13-a110-74883906cffe" />
+</div>
+
+- **Consulta de usuários cadastrados exigindo token de autenticação**:
+<div alingn="center">
+ <img src="https://github.com/DiegoBorraz/login-spring-security/assets/20254303/963855d7-5af7-4071-b0c2-462ed8f50e85" />
+</div>
