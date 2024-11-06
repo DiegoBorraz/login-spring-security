@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
-import com.loginspring.core.domain.user.User;
+import com.loginspring.domain.entity.User;
 
 @Service
 public class TokenService {

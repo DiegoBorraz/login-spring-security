@@ -4,13 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.loginspring.core.dto.LoginDTO;
-import com.loginspring.core.dto.TokenResponseDTO;
-import com.loginspring.core.service.loginService.LoginServiceImpl;
+import com.loginspring.api.record.LoginRecord;
+import com.loginspring.api.record.TokenResponseRecord;
+import com.loginspring.domain.service.loginService.LoginServiceImpl;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -24,13 +23,13 @@ public class LoginController {
 
     @PostMapping("/login")
     @ResponseStatus(HttpStatus.OK)
-    public TokenResponseDTO login(@RequestBody @Valid LoginDTO login) {
+    public TokenResponseRecord login(@RequestBody @Valid LoginRecord login) {
         return loginService.login(login);
     }
 
     @PostMapping("refresh-token")
     @ResponseStatus(HttpStatus.OK)
-    public TokenResponseDTO refreshToken(@RequestBody @Valid String requestRefreshToken) {
+    public TokenResponseRecord refreshToken(@RequestBody @Valid String requestRefreshToken) {
         return loginService.getRefreshToken(requestRefreshToken);
     }
 }
